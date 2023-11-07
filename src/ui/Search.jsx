@@ -15,7 +15,7 @@ function Search({ onSubmit }) {
   }
 
   return (
-    <form className="bg-white dark:bg-darkBlue transition-all duration-200 flex items-center py-4 gap-6 w-full md:w-[500px] px-8 text-[1.2rem] shadow-md rounded">
+    <form className="bg-white dark:bg-darkBlue transition-all duration-200 flex items-center py-3 gap-6 w-full md:w-[400px] px-8 text-[1rem] shadow-md rounded">
       <button>
         <HiMagnifyingGlass />
       </button>

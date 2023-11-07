@@ -4,7 +4,7 @@ function Logo() {
   return (
     <Link
       to={"/"}
-      className=" text-veryDarkBlueText text-[1rem] md:text-[1.6rem] font-bold dark:text-white "
+      className=" text-veryDarkBlueText text-[1rem] md:text-[1.4rem] font-bold dark:text-white "
     >
       Where in the world?
     </Link>

@@ -12,11 +12,12 @@ export default {
         veryLightGrey: "hsl(0, 0%, 98%)",
       },
       screens: {
-        sm: "692px",
+        xsm: "595px",
+        sm: "935px",
         md: "1220px",
         lg: "1600px",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

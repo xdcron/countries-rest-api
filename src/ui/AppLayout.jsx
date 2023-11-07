@@ -3,9 +3,9 @@ import Header from "./Header";
 
 function AppLayout() {
   return (
-    <div className="h-full ">
+    <div className="h-screen overflow-auto  scrollbar-hide">
       <Header />
-      <main className=" bg-veryLightGrey h-screen dark:bg-veryDarkBlue dark:text-white transition-all duration-200">
+      <main className="overflow-auto  scrollbar-hide h-full bg-veryLightGrey dark:bg-veryDarkBlue dark:text-white transition-all duration-200 ">
         <Outlet />
       </main>
     </div>

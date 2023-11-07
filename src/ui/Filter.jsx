@@ -19,11 +19,11 @@ function Filter({ option, onChange, onClick }) {
   }
 
   return (
-    <div className="relative  w-[220px]">
+    <div className="relative  w-[190px]">
       <button
         onClick={handleOpen}
         id="countries-filter"
-        className="bg-white dark:bg-darkBlue transition-all duration-200 py-4 px-5 font-medium text-[1.1rem] flex items-center justify-between rounded shadow-md w-full"
+        className="bg-white dark:bg-darkBlue transition-all duration-200 py-3 px-5 font-medium  flex items-center justify-between rounded shadow-md w-full"
       >
         {option === "" ? "Filter by region" : option}
         <span>
@@ -34,7 +34,8 @@ function Filter({ option, onChange, onClick }) {
         <div
           aria-labelledby="countries-filter"
           role="filter"
-          className="bg-white dark:bg-darkBlue transition-all duration-200 md:absolute w-full rounded shadow-md mt-3  flex flex-col font-semibold pt-3 pb-4"
+          className="bg-white 
+          text-[0.9rem] dark:bg-darkBlue transition-all duration-200 md:absolute w-full rounded shadow-md mt-3  flex flex-col font-semibold pt-3 pb-4"
         >
           {options.map((option, i) => (
             <FilterOption key={i} onClick={handleOption} option={option} />

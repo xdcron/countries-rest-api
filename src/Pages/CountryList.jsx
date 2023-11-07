@@ -9,10 +9,9 @@ import {
 import CountryItem from "../ui/CountryItem";
 import { useMutation } from "@tanstack/react-query";
 import "ldrs/Bouncy";
-import { data } from "autoprefixer";
 
 function CountryList() {
-  const maxInitialCountries = 32;
+  const maxInitialCountries = 28;
   const increaseCountriesShownNum = 12;
 
   const [countries, setCountries] = useState([]);
@@ -37,7 +36,6 @@ function CountryList() {
       setError(false);
       setisloading(true);
       const data = await getCountry(query);
-      console.log(data);
       setCountries(data);
     } catch (err) {
       setError(true);
@@ -50,11 +48,10 @@ function CountryList() {
     mutationFn: getCountries,
     onSuccess: (data) => {
       setCountries(data);
-      console.log(countryList);
       console.log("success");
     },
     onError: () => {
-      alert("an error occured");
+      alert("Could not get Countries");
     },
   });
 
@@ -67,8 +64,8 @@ function CountryList() {
   }
 
   return (
-    <div className="px-4 py-14 md:px-20 flex flex-col gap-10 items-center justify-center w-full h-auto bg-veryLightGrey dark:bg-veryDarkBlue transition-all duration-200">
-      <div className="flex md:items-center md:flex-row flex-col md:justify-between w-full gap-3 md:px-4">
+    <div className="relative flex flex-col gap-2 items-center justify-center w-full  bg-veryLightGrey dark:bg-veryDarkBlue transition-all duration-200">
+      <div className=" sticky top-0  flex md:items-center md:flex-row flex-col md:justify-between w-full gap-3 bg-veryLightGrey dark:bg-veryDarkBlue transition-all duration-200 px-4 py-9 md:px-20 ">
         <Search onSubmit={handleQuery} />
         <Filter
           option={option}
@@ -88,7 +85,7 @@ function CountryList() {
       ) : (
         <div>
           {!error ? (
-            <div className=" mt-6 w-full flex flex-wrap gap-16 justify-evenly">
+            <div className=" mt-6 w-full grid md:grid-cols-4 gap-14 sm:grid-cols-3 xsm:grid-cols-2 grid-cols-1">
               {countries?.slice(0, limit).map((country) => (
                 <CountryItem country={country} key={country.name.common} />
               ))}
@@ -101,11 +98,11 @@ function CountryList() {
         </div>
       )}
 
-      <div className="w-full">
+      <div className="w-full pl-14 py-4">
         {limit < countries.length && !error && !isLoading && (
           <button
             onClick={increaseLimit}
-            className=" bg-white py-3 px-5 rounded-md shadow-lg font-semibold text-veryDarkBlueText"
+            className=" bg-white py-3 px-5 rounded-md shadow-lg font-semibold text-veryDarkBlueText dark:bg-darkBlue dark:text-white"
           >
             Show more
           </button>

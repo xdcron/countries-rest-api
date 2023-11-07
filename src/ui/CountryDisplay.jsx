@@ -3,28 +3,27 @@ import BorderCountry from "./BorderCountry";
 function CountryDisplay({ country }) {
   if (!country) return;
   const [data] = country;
-  console.log(data);
 
   const native = Object.values(data.name.nativeName)[0].common;
   const currency = Object.values(data.currencies)[0].name;
   const languages = Object.values(data.languages);
 
   return (
-    <div className=" pt-24 flex flex-col md:flex-row gap-x-24 items-center ">
+    <div className=" pt-14 flex flex-col md:flex-row gap-x-24 items-center ">
       <figure className="">
         <img
-          className="md:w-[600px] md:h-[400px] h-[213px] w-[320px] "
+          className="md:w-[600px] md:h-[400px] h-[213px] xsm:w-[320px] shadow-lg "
           src={data.flags.png}
           alt={data.name.common}
         />
       </figure>
 
-      <div className="flex flex-col gap-7 w-[320px] md:w-auto">
-        <h2 className=" mt-10 text-[1.7rem] md:text-[2.5rem] font-bold">
+      <div className="flex flex-col gap-7 w-[250px] xsm:w-[320px] md:w-auto">
+        <h2 className=" mt-10 text-[1.7rem] md:text-[2.1rem] font-bold">
           {data.name.common}
         </h2>
         <div className="flex gap-x-24 gap-y-14 md:flex-row flex-col">
-          <div className="text-[1.1rem] md:text-[1.3rem] font-semibold grid gap-3">
+          <div className="text-[1.1rem] md:text-[1.2rem] font-semibold grid gap-3">
             <p>
               Native Name:{" "}
               <span className=" text-gray-700 font-normal dark:text-gray-300">
@@ -56,7 +55,7 @@ function CountryDisplay({ country }) {
               </span>
             </p>
           </div>
-          <div className=" text-[1.1rem] md:text-[1.3rem] font-semibold flex flex-col gap-3">
+          <div className=" text-[1.1rem] md:text-[1.2rem] font-semibold flex flex-col gap-3">
             <p>
               Top Level Domain:{" "}
               <span className=" text-gray-700 font-normal dark:text-gray-300">
@@ -79,12 +78,12 @@ function CountryDisplay({ country }) {
         </div>
         {data.borders && (
           <div className="flex md:items-center md:flex-row flex-col md:gap-3 gap-4">
-            <p className="text-[1.1rem] font-semibold md:text-[1.3rem]">
+            <p className="text-[1.1rem] font-semibold md:text-[1.2rem]">
               Border Countries:
             </p>{" "}
-            <span className="flex items-center gap-2">
+            <span className="flex items-center flex-wrap gap-2">
               {data.borders.map((country) => (
-                <BorderCountry country={country} />
+                <BorderCountry key={country} country={country} />
               ))}
             </span>
           </div>
