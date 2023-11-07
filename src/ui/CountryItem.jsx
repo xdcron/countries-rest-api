@@ -16,9 +16,9 @@ function CountryItem({ country }) {
       </figure>
 
       <div className="px-7 flex flex-col gap-6">
-        <h3 className=" text-veryDarkBlueText dark:text-white font-bold text-[1.1rem]">
+        <h2 className=" text-veryDarkBlueText dark:text-white font-bold text-[1.1rem]">
           {country.name.common}
-        </h3>
+        </h2>
         <div className="text-[1.1rem] font-medium grid gap-1 dark:text-white transition-all duration-200 text-veryDarkBlueText">
           <p className="text-[0.9rem] ">
             Population:{" "}
