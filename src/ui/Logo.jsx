@@ -6,7 +6,7 @@ function Logo() {
       to={"/"}
       className=" text-veryDarkBlueText text-[1rem] md:text-[1.4rem] font-bold dark:text-white "
     >
-      Where in the world?
+      <h1>Where in the world?</h1>
     </Link>
   );
 }
