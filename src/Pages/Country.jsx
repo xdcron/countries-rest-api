@@ -23,7 +23,8 @@ function Country() {
   });
 
   useEffect(() => {
-    mutate(country);
+    const con = country.split("_").join(" ");
+    mutate(con);
   }, []);
 
   function handleBack() {

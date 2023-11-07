@@ -4,7 +4,7 @@ function CountryItem({ country }) {
   if (!country) return;
   return (
     <Link
-      to={`${country.name.common}`}
+      to={`${country.name.common.split(" ").join("_")}`}
       className="w-[270px] h-[350px] rounded-md flex flex-col bg-white dark:bg-darkBlue duration-200 gap-8 pb-5 shadow-lg"
     >
       <figure className="w-full h-[160px]">
